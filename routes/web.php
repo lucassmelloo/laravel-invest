@@ -27,7 +27,7 @@ Route::middleware(['auth', 'verified'])->group( function(){
 
     Route::resource('dashboard', DashboardController::class);
     Route::resource('fixed_incomes', FixedIncomesController::class);
-    Route::resource('product_type', ProductTypeController::class)->only(['index','create','destroy']);
+    Route::resource('product_type', ProductTypeController::class)->except(['store','show','edit']);
 
     Route::prefix('profile')->name('profile.')->group(function (){
         {

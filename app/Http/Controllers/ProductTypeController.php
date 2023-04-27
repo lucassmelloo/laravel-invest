@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DeleteProductTypeRequest;
 use App\Models\ProductType;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -57,15 +58,17 @@ class ProductTypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, ProductType $productType) : RedirectResponse
     {
-        //
+        $productType->update($request->input());
+        return back()->with(['status'=>'productType-updated']);
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request, ProductType $productType) : RedirectResponse
+    public function destroy(DeleteProductTypeRequest $request, ProductType $productType) : RedirectResponse
     {
         $productType->delete();
 
