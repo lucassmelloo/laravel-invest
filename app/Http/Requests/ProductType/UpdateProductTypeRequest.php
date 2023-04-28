@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\ProductType;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DeleteProductTypeRequest extends FormRequest
+class UpdateProductTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,17 +22,7 @@ class DeleteProductTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'abreviation'=>'required',
-            'id'=>'required,exists:product_types:id',
+            //
         ];
     }
-
-    public function messages()
-    {
-        return [
-            'abreviation.required'=>'To exclude a product type, you must enter its abbreviation.',
-            'id.required'=>'ID is required.'
-        ];
-    }
-
 }

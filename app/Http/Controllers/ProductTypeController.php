@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\DeleteProductTypeRequest;
+use App\Http\Requests\ProductType\UpdateProductTypeRequest;
+use App\Http\Requests\ProductType\DeleteProductTypeRequest;
 use App\Models\ProductType;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class ProductTypeController extends Controller
      */
     public function index()
     {
+        //dd(ProductType::all());
         return view('product_type.index')->with('product_types',ProductType::all());
     }
 
@@ -60,7 +62,7 @@ class ProductTypeController extends Controller
      */
     public function update(Request $request, ProductType $productType) : RedirectResponse
     {
-        $productType->update($request->input());
+        $productType->update($request->only(['description','abreviation']));
         return back()->with(['status'=>'productType-updated']);
     }
 
