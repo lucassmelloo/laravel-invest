@@ -24,7 +24,7 @@ class ProductTypeController extends Controller
      */
     public function create(Request $request) : RedirectResponse
     {
-        //dd($request->input());
+
         ProductType::create($request->validate([
             'abreviation'=>['required','max:255'],
             'description' => ['required','max:255']

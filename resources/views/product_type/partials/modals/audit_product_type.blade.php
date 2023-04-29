@@ -1,5 +1,5 @@
 @foreach ( $product_types as $product_type )
-<x-modal name="audit-productType-{{$product_type->id}}" :show="$errors->userDeletion->isNotEmpty()" focusable>
+<x-modal name="audit-productType-{{$product_type->id}}" focusable>
     <div class="p-6">
         @csrf
         @method('delete')
@@ -10,19 +10,10 @@
         <p class="mt-1 text-sm text-gray-600">
             {{ __('Once the product type has been deleted, it will not be possible to recover it. Please type, the product type abbreviation to confirm you would like to permanently delete it.') }}
         </p>
-
         <div class="mt-6">
-            <x-input-label for="abreviation" value="{{ __('Abreviation') }}" class="sr-only" />
-
-            <x-text-input
-                id="abreviation"
-                name="abreviation"
-                type="text"
-                class="mt-1 block w-3/4"
-                placeholder="{{ $product_type->abreviation}}"
-            />
-
-            <x-input-error :messages="$errors->userDeletion->get('abreviation')" class="mt-2" />
+            @foreach ($product_type->audits as $audit)
+                <h1>{{ucfirst( $audit->getMetadata()['audit_event']) . ' at: ' . $audit->getMetadata()['audit_created_at']}}</h1>
+            @endforeach
         </div>
         
         <div class="mt-6 flex justify-end">
