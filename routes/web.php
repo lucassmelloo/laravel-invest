@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FixedIncomesController;
+use App\Http\Controllers\IndexerController;
 use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
@@ -28,6 +29,7 @@ Route::middleware(['auth', 'verified'])->group( function(){
     Route::resource('dashboard', DashboardController::class);
     Route::resource('fixed_incomes', FixedIncomesController::class);
     Route::resource('product_type', ProductTypeController::class)->except(['store','show','edit']);
+    Route::resource('indexers', IndexerController::class)->except(['store','show','edit']);
 
     Route::prefix('profile')->name('profile.')->group(function (){
         {

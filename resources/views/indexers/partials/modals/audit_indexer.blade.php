@@ -1,17 +1,17 @@
-@foreach ( $product_types as $product_type )
-<x-modal name="audit-productType-{{$product_type->id}}" title="Audit: {{$product_type->description}}" :scrollable="true" >
+@foreach ( $indexers as $indexer )
+<x-modal name="audit-indexer-{{$indexer->id}}" title="Audit: {{$indexer->description}}" :scrollable="true" >
     <div class="p-6">
         @csrf
         @method('delete')
         <h2 class="text-lg font-medium text-gray-900">
-            <strong>{{ __('Audit: ') }}</strong>{{__($product_type->description)}}
+            <strong>{{ __('Audit: ') }}</strong>{{__($indexer->description)}}
         </h2>
 
         <p class="my-1 text-sm text-gray-600">
             {{ __('Once the product type has been deleted, it will not be possible to recover it. Please type, the product type abbreviation to confirm you would like to permanently delete it.') }}
         </p>
         <div>
-            @foreach ($product_type->audits->reverse() as $audit)
+            @foreach ($indexer->audits->reverse() as $audit)
                 @if($audit->event != 'created')
                     <h1 class="mt-5"><strong>{{ucfirst($audit->event)}}</strong> {{' at: ' . date_format($audit->created_at,'Y/m/d h:m:s')}}</h1>
                     <table class="w-full text-sm text-left text-gray-500 table-fixed">
