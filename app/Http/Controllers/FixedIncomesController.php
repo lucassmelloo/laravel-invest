@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Indexers;
+use App\Models\ProductType;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class FixedIncomesController extends Controller
@@ -9,9 +12,12 @@ class FixedIncomesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        return view('fixed_incomes');
+        $indexers = Indexers::all();
+        $product_types = ProductType::all();
+        
+        return view('fixed_incomes.index', ['indexers'=>$indexers,'product_types'=>$product_types]);
     }
 
     /**

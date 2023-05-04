@@ -14,7 +14,16 @@ class FixedIncomes extends Model implements Auditable
 
 
     protected $fillable = [
-
+        'applied_value',
+        'due_date',
+        'title',
+        'application_date',
+        'product_type_id'
     ];
+
+    public function product_type()
+    {
+        return $this->belongsTo(ProductType::class);
+    }
 
 }

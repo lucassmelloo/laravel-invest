@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use OwenIt\Auditing\Auditable as AuditingAuditable;
 use OwenIt\Auditing\Contracts\Auditable;
 
@@ -23,4 +24,8 @@ class ProductType extends Model implements Auditable
         'description'
     ];
 
+    public function fixed_incomes(): HasMany
+    {
+        return $this->hasMany(FixedIncomes::class);
+    }
 }
