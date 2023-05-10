@@ -22,23 +22,23 @@ class ProductTypeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request) : RedirectResponse
+    public function create(Request $request) 
     {
 
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request): RedirectResponse
+    {
         ProductType::create($request->validate([
             'abreviation'=>['required','max:255'],
             'description' => ['required','max:255']
         ]));
 
         return back()->with(['status'=>'productType-created']);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -73,7 +73,6 @@ class ProductTypeController extends Controller
     public function destroy(DeleteProductTypeRequest $request, ProductType $productType) : RedirectResponse
     {
         $productType->delete();
-
         return back()->with(['status'=>'productType-deleted']);
     }
 }

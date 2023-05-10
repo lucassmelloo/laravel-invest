@@ -28,8 +28,8 @@ Route::middleware(['auth', 'verified'])->group( function(){
 
     Route::resource('dashboard', DashboardController::class);
     Route::resource('fixed_incomes', FixedIncomesController::class);
-    Route::resource('product_type', ProductTypeController::class)->except(['store','show','edit']);
-    Route::resource('indexers', IndexerController::class)->except(['store','show','edit']);
+    Route::resource('product_type', ProductTypeController::class)->except(['create','show','edit']);
+    Route::resource('indexers', IndexerController::class)->except(['create','show','edit']);
 
     Route::prefix('profile')->name('profile.')->group(function (){
         {

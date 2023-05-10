@@ -10,7 +10,7 @@
                     {{ __('You can register all indexes to your investments here.') }}
                 </p>
             </header>
-            <form method="GET" action="{{ route('indexers.create') }}" class="mt-6 space-y-6">
+            <form method="GET" action="{{ route('indexers.store') }}" class="mt-6 space-y-6">
                 @csrf
                 @method('GET')
                 <div>

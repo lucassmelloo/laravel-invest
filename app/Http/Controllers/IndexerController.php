@@ -20,23 +20,23 @@ class IndexerController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request) : RedirectResponse
+    public function create()
     {
 
-        Indexers::create($request->validate([
-            'abreviation'=>['required','max:255'],
-            'description' => ['required','max:255']
-        ]));
-
-        return back()->with(['status'=>'productType-created']);
+        
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request) : RedirectResponse
     {
-        //
+        dd('lucas');
+        Indexers::create($request->validate([
+            'abreviation'=>['required','max:255'],
+            'description' => ['required','max:255']
+        ]));
+        return back()->with(['status'=>'productType-created']);
     }
 
     /**
@@ -68,10 +68,9 @@ class IndexerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy( Indexers $indexers) : RedirectResponse
+    public function destroy(Indexers $indexer) : RedirectResponse
     {
-        $indexers->delete();
-
+        $indexer->delete();
         return back();
     }
 }

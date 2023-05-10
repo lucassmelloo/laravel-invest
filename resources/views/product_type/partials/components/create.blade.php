@@ -10,7 +10,7 @@
                     {{ __('You can register all kinds of products and indexes of your investments.') }}
                 </p>
             </header>
-            <form method="GET" action="{{ route('product_type.create') }}" class="mt-6 space-y-6">
+            <form method="GET" action="{{ route('product_type.store') }}" class="mt-6 space-y-6">
                 @csrf
                 @method('GET')
                 <div>

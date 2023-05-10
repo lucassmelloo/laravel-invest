@@ -32,7 +32,15 @@ class FixedIncomesController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request):RedirectResponse
+    public function create(Request $request)
+    {
+        
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request) : RedirectResponse
     {
         FixedIncomes::create($request->validate([
             'title'=>['required', 'max:255'],
@@ -42,14 +50,6 @@ class FixedIncomesController extends Controller
             'product_type_id'=>['required', 'max:255']
         ]));
         return back();
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**

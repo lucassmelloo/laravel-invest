@@ -11,7 +11,7 @@
                 </p>
             </header>
             <div class="flex">
-                <form method="GET" action="{{ route('product_type.create') }}" class="flex w-full">
+                <form method="GET" action="{{ route('fixed_incomes.index') }}" class="flex w-full">
                     @csrf
                     @method('GET')
                     <div class="w-3/5 pr-3">
