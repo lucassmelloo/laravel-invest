@@ -10,9 +10,9 @@
                     {{ __('You can register your fidex incomes and filter then.') }}
                 </p>
             </header>
-            <form method="GET" action="{{ route('fixed_incomes.create') }}" class="mt-6 space-y-6">
+            <form method="POST" action="{{ route('fixed_incomes.store') }}" class="mt-6 space-y-6">
                 @csrf
-                @method('GET')
+                @method('POST')
                 <div >
                     <x-input-label for="Title" :value="__('Title')" />
                     <x-text-input id="title" name="title" type="text" class="block w-full" required autofocus autocomplete="description" />

@@ -30,8 +30,7 @@ class IndexerController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request) : RedirectResponse
-    {
-        dd('lucas');
+    {   
         Indexers::create($request->validate([
             'abreviation'=>['required','max:255'],
             'description' => ['required','max:255']

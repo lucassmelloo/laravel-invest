@@ -10,9 +10,9 @@
                     {{ __('You can register all indexes to your investments here.') }}
                 </p>
             </header>
-            <form method="GET" action="{{ route('indexers.store') }}" class="mt-6 space-y-6">
+            <form method="POST" action="{{ route('indexers.store') }}" class="mt-6 space-y-6">
                 @csrf
-                @method('GET')
+                @method('POST')
                 <div>
                     <x-input-label for="abreviation" :value="__('Abreviation')" />
                     <x-text-input id="abreviation" name="abreviation" type="text" class="mt-1 block w-full" required autofocus autocomplete="name" />
