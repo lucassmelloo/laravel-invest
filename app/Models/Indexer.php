@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 use OwenIt\Auditing\Auditable as AuditingAuditable;
 
-class Indexers extends Model implements Auditable
+class Indexer extends Model implements Auditable
 {
     use HasFactory;
     use AuditingAuditable;
@@ -22,5 +22,10 @@ class Indexers extends Model implements Auditable
         'abreviation',
         'description'
     ];
+
+    public function fixed_incomes()
+    {
+        return $this->belongsToMany(FixedIncome::class, 'fixed_income_has_indexer');
+    }
 
 }

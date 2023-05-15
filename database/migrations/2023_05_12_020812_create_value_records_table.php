@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\FixedIncomes;
+use App\Models\FixedIncome;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('record_date');
             $table->float('record_liquid_value');
             $table->float('record_gross_value')->nullable();
-            $table->foreignIdFor(FixedIncomes::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(FixedIncome::class)->constrained()->onDelete('cascade');
         });
     }
 

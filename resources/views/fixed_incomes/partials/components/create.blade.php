@@ -45,27 +45,37 @@
                     </div>
                 </div>
                 <div class="flex space-x-3">
-                    <div class="w-1/2">
-                        <x-input-label for="indexer" :value="__('Indexers')" />
-                        <select id="indexer" name="indexer" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                    <div class="w-3/4">
+                        <x-input-label for="firstIndexerId" :value="__('First Indexer')" />
+                        <select id="firstIndexerId" name="firstIndexer[id]" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                             <option selected>Choose Indexer</option>
                             @foreach ( $indexers as $indexer)  
                             <option value="{{$indexer->id}}">{{$indexer->abreviation}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="w-1/2">
-                    {{-- <x-input-label for="indexer" :value="__('Indexers')" />
-                        <select id="indexer" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
-                            <option selected>Choose Indexer</option>
+                    <div class="w-1/4">
+                        <x-input-label for="firstIndexerValue" :value="__('Value')" />
+                        <x-text-input id="firstIndexerValue" name="firstIndexer[value]" type="number" step="0.01" class="block w-full" required autofocus autocomplete="description" />
+                    </div>
+                </div>
+                <div class="flex space-x-3">
+                    <div class="w-3/4">
+                        <x-input-label for="secondIndexerId" :value="__('Second Indexer')" />
+                        <select id="secondIndexerId" name="secondIndexer[id]" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                            <option selected value="" >Choose Indexer</option>
                             @foreach ( $indexers as $indexer)  
                             <option value="{{$indexer->id}}">{{$indexer->abreviation}}</option>
                             @endforeach
                         </select>
-                    </div> --}}
+                    </div>
+                    <div class="w-1/4">
+                        <x-input-label for="secondIndexerValue" :value="__('Value')" />
+                        <x-text-input id="secondIndexerValue" name="secondIndexer[value]" type="number" step="0.01" class="block w-full" autofocus autocomplete="description" />
+                    </div>
                 </div>
 
-                <div class="flex items-center gap-4 mt-5 pr-3">
+                <div class="items-center gap-4 mt-5 pr-3">
                     <x-primary-button>{{ __('New') }}</x-primary-button>
                 </div>
             </form>

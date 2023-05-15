@@ -9,8 +9,8 @@
         
         <div class="max-w-7xl max-h mx-auto sm:px-6 lg:px-8 space-y-6">
             @include('components.error-card')
-            @include('fixed_incomes.partials.components.create_fixed_incomes')
-            @include('fixed_incomes.partials.components.filter_fixed_incomes')
+            @include('fixed_incomes.partials.components.create')
+            @include('fixed_incomes.partials.components.filter')
             @include('fixed_incomes.partials.components.cards_fixed_incomes')
         </div>
     </div>

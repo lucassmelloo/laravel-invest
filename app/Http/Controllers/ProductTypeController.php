@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProductType\UpdateProductTypeRequest;
 use App\Http\Requests\ProductType\DeleteProductTypeRequest;
 use App\Models\ProductType;
 use Illuminate\Http\RedirectResponse;

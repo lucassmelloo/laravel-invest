@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FixedIncomes;
-use App\Models\Indexers;
+use App\Models\FixedIncome;
+use App\Models\Indexer;
 use App\Models\ProductType;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -16,9 +16,9 @@ class FixedIncomesController extends Controller
      */
     public function index(): View
     {
-        $indexers = Indexers::all();
+        $indexers = Indexer::all();
         $product_types = ProductType::all();
-        $fixed_incomes = FixedIncomes::all();
+        $fixed_incomes = FixedIncome::all();
         
         return view(
             'fixed_incomes.index',
@@ -42,7 +42,8 @@ class FixedIncomesController extends Controller
      */
     public function store(Request $request) : RedirectResponse
     {
-        FixedIncomes::create($request->validate([
+        dd($request->all());
+        FixedIncome::create($request->validate([
             'title'=>['required', 'max:255'],
             'application_date'=>['required', 'max:255'],
             'due_date'=>['required', 'max:255'],

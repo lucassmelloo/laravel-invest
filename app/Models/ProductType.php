@@ -26,6 +26,6 @@ class ProductType extends Model implements Auditable
 
     public function fixed_incomes(): HasMany
     {
-        return $this->hasMany(FixedIncomes::class);
+        return $this->hasMany(FixedIncome::class);
     }
 }

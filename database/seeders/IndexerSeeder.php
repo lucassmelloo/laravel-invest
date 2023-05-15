@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Indexers;
+use App\Models\Indexer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -30,6 +30,6 @@ class IndexerSeeder extends Seeder
             ];
             
         foreach ($indexers as $indexer)
-            Indexers::create($indexer);
+            Indexer::create($indexer);
     }
 }

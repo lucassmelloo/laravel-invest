@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
 
         \App\Models\User::factory()->create([
             'name' => 'Lucas de Mello',
-            'email' => 'lucasmellovieira99@gmail.com',
+            'email' => 'lucasmellovieira99@gmail.com'
         ]);
     }
 }

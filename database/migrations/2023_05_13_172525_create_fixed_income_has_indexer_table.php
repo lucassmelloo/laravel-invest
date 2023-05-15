@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\FixedIncomes;
-use App\Models\Indexers;
+use App\Models\FixedIncome;
+use App\Models\Indexer;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('fixed_income_has_indexer', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignIdFor(Indexers::class)->constrained()->onDelete('cascade');
-            $table->foreignIdFor(FixedIncomes::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(Indexer::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(FixedIncome::class)->constrained()->onDelete('cascade');
             $table->float('value');
         });
     }

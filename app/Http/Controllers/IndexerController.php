@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Indexers;
+use App\Models\Indexer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -14,7 +14,7 @@ class IndexerController extends Controller
     public function index()
     {
         //dd(ProductType::all());
-        return view('indexers.index')->with('indexers',Indexers::all());
+        return view('indexers.index')->with('indexers',Indexer::all());
     }
 
     /**
@@ -31,7 +31,7 @@ class IndexerController extends Controller
      */
     public function store(Request $request) : RedirectResponse
     {   
-        Indexers::create($request->validate([
+        Indexer::create($request->validate([
             'abreviation'=>['required','max:255'],
             'description' => ['required','max:255']
         ]));
@@ -57,7 +57,7 @@ class IndexerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Indexers $indexer) : RedirectResponse
+    public function update(Request $request, Indexer $indexer) : RedirectResponse
     {   
         $indexer->update($request->only(['description','abreviation']));
         return back();
@@ -67,7 +67,7 @@ class IndexerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Indexers $indexer) : RedirectResponse
+    public function destroy(Indexer $indexer) : RedirectResponse
     {
         $indexer->delete();
         return back();
