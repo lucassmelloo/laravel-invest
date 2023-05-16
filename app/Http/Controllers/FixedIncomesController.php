@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateFixedIncomeRequest;
 use App\Models\FixedIncome;
 use App\Models\Indexer;
 use App\Models\ProductType;
@@ -40,16 +41,10 @@ class FixedIncomesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) : RedirectResponse
+    public function store(CreateFixedIncomeRequest $request) : RedirectResponse
     {
         dd($request->all());
-        FixedIncome::create($request->validate([
-            'title'=>['required', 'max:255'],
-            'application_date'=>['required', 'max:255'],
-            'due_date'=>['required', 'max:255'],
-            'applied_value'=>['required', 'max:255'],
-            'product_type_id'=>['required', 'max:255']
-        ]));
+        FixedIncome::create($request->all());
         return back();
     }
 

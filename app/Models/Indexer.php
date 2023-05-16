@@ -25,7 +25,12 @@ class Indexer extends Model implements Auditable
 
     public function fixed_incomes()
     {
-        return $this->belongsToMany(FixedIncome::class, 'fixed_income_has_indexer');
+        return $this->belongsToMany(
+            FixedIncome::class,
+            'fixed_income_has_indexer',
+            'fixed_income_id',
+            'indexer_id'
+        );
     }
 
 }
