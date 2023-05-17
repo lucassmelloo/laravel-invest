@@ -24,7 +24,7 @@ class CreateFixedIncomeRequest extends FormRequest
         return [
             'title'=>['required', 'max:255'],
             'application_date'=>['required'],
-            /* 'due_date'=>['required', 'date|after:today'], */
+            'due_date'=>['required', 'date','after_today'],
             'applied_value'=>['required'],
             'product_type_id'=>['required']
         ];
@@ -35,8 +35,8 @@ class CreateFixedIncomeRequest extends FormRequest
         return [
             'title.required' => 'A title is required',
             'application_date.require'=> 'Application date is required',
-            /* 'due_date.required'=>'Due date is required',
-            'due_date.date'=>'The Due Date needs to be greater than today', */
+            'due_date.required'=>'Due date is required',
+            'due_date.after_today'=>'The Due Date needs to be greater than today',
             'applied_value'=>'Applied value is required'
         ];
     }
