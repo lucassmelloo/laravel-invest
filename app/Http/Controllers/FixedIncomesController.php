@@ -6,15 +6,18 @@ use App\Http\Requests\CreateFixedIncomeRequest;
 use App\Models\FixedIncome;
 use App\Models\Indexer;
 use App\Models\ProductType;
+use App\Repositories\FixedIncomeRepositoryInterface;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class FixedIncomesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+    public function __construct(protected FixedIncomeRepositoryInterface $repository){
+
+    }
+    
     public function index(): View
     {
         $indexers = Indexer::all();
@@ -44,7 +47,7 @@ class FixedIncomesController extends Controller
     public function store(CreateFixedIncomeRequest $request) : RedirectResponse
     {
         dd($request->all());
-        FixedIncome::create($request->all());
+        $this->repository->create($request->all());
         return back();
     }
 
