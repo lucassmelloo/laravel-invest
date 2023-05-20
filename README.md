@@ -7,9 +7,24 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Laravel Invest
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Instalação
+
+1. Clone o repositório: `git clone https://github.com/lucassmelloo/laravel-invest.git`.
+2. Instale as dependências do PHP: `composer install`.
+3. Instale as depencencias do JS: `npm install`
+4. Copie o arquivo .env.example e renomeie para .env
+5. Configure as variáveis de ambiente no arquivo .env
+6. Gere a chave de criptografia: `php artisan key:generate` 
+7. Execute as migrações do banco de dados: `php artisan migrate`
+8. Popule o banco de dados: `php artisan db:seed`
+9. Inicie o servidor: `php artisan serve`
+10. Inicie a compilação do JS: `npm run dev`
+
+### Desing Pattern: 
+O Design pattern proposto foi esboçado da sequinte forma: 
+
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
