@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->date('application_date');
             $table->foreignIdFor(ProductType::class)->constrained()->onDelete('cascade');
-            $table->integer('quotas');
+            $table->integer('quotas')->default(1);
         });
     }
 

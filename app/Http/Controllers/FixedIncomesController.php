@@ -22,7 +22,7 @@ class FixedIncomesController extends Controller
     {
         $indexers = Indexer::all();
         $product_types = ProductType::all();
-        $fixed_incomes = FixedIncome::all();
+        $fixed_incomes = $this->repository->all();
         
         return view(
             'fixed_incomes.index',
@@ -46,8 +46,8 @@ class FixedIncomesController extends Controller
      */
     public function store(CreateFixedIncomeRequest $request) : RedirectResponse
     {
-        dd($request->all());
-        $this->repository->create($request->all());
+        
+        $this->repository->createFixedIncomeWithIndexers($request->all());
         return back();
     }
 
