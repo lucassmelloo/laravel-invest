@@ -3,6 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\FixedIncome;
+use App\Models\Indexer;
 use App\Repositories\FixedIncomeRepositoryInterface;
 use Exception;
 use Illuminate\Support\Facades\DB;
@@ -18,14 +19,19 @@ class FixedIncomeRepository extends BaseRepository implements FixedIncomeReposit
     public function createFixedIncomeWithIndexers($data)
     {
         DB::beginTransaction();
-        $indexers = array_filter(data_get($data, 'indexers.*.id'),function ($value){
-            return $value !== null;
-        });
-        //dd($indexers->flatten());
+
+        $indexers = collect(data_get($data, 'indexers.*'))
+                        ->filter(function ($value) {
+                            return $value['id'] !== null;
+                        });
+
         try 
         {
-            $this->create($data);
-            $this->indexers()->attach($indexers);
+            $fixedIncome = $this->model->create($data);
+            //dd($indexers);
+            foreach ($indexers as $indexer) {
+                $fixedIncome->indexers()->attach($indexer['id'], ['value' => $indexer['value']]);
+            }
             DB::commit();
         }
         catch( Exception $err)

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('record_date');
             $table->float('record_liquid_value');
             $table->float('record_gross_value')->nullable();
-            $table->foreignIdFor(FixedIncome::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(FixedIncome::class)->constrained();
         });
     }
 

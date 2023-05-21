@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('due_date');
             $table->string('title');
             $table->date('application_date');
-            $table->foreignIdFor(ProductType::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(ProductType::class)->constrained();
             $table->integer('quotas')->default(1);
         });
     }

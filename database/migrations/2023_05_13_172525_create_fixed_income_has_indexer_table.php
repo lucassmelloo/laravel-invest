@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('fixed_income_has_indexer', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignIdFor(Indexer::class)->constrained()->onDelete('cascade');
-            $table->foreignIdFor(FixedIncome::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(Indexer::class)->constrained();
+            $table->foreignIdFor(FixedIncome::class)->constrained();
             $table->float('value');
         });
     }
