@@ -21,23 +21,23 @@ class FixedIncomeRepository extends BaseRepository implements FixedIncomeReposit
         DB::beginTransaction();
 
         $indexers = collect(data_get($data, 'indexers.*'))
-                        ->filter(function ($value) {
+                        ->reject(function ($value) {
                             return $value['id'] !== null;
                         });
 
         try 
         {
             $fixedIncome = $this->model->create($data);
-            //dd($indexers);
-            foreach ($indexers as $indexer) {
+
+            $indexers->each(function ($indexer) use ($fixedIncome) {
                 $fixedIncome->indexers()->attach($indexer['id'], ['value' => $indexer['value']]);
-            }
+            });
+
             DB::commit();
         }
         catch( Exception $err)
         {
             DB::rollBack();
-            dd($err);
         }
         
     }
