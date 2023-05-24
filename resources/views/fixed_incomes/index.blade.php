@@ -11,7 +11,7 @@
             @include('components.error-card')
             @include('fixed_incomes.partials.components.create')
             @include('fixed_incomes.partials.components.filter')
-            @include('fixed_incomes.partials.components.cards_fixed_incomes')
+            @include('fixed_incomes.partials.components.cards')
         </div>
     </div>
 </x-app-layout>

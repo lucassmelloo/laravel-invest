@@ -76,8 +76,8 @@
                     </tbody>
                 </table>
             </div>
-            @include('indexers.partials.modals.delete_indexer')
-            @include('indexers.partials.modals.edit_indexer')
-            @include('indexers.partials.modals.audit_indexer')
+            @include('indexers.partials.modals.delete')
+            @include('indexers.partials.modals.edit')
+            @include('indexers.partials.modals.audit')
         </section>
     </div>

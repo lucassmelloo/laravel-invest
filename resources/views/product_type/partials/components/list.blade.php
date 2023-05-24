@@ -76,8 +76,8 @@
                     </tbody>
                 </table>
             </div>
-            @include('product_type.partials.modals.delete_product_type')
-            @include('product_type.partials.modals.edit_product_type')
-            @include('product_type.partials.modals.audit_product_type')
+            @include('product_type.partials.modals.delete')
+            @include('product_type.partials.modals.edit')
+            @include('product_type.partials.modals.audit')
         </section>
     </div>
