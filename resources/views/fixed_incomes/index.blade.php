@@ -14,4 +14,7 @@
             @include('fixed_incomes.partials.components.cards')
         </div>
     </div>
+    @livewireScripts
+    @livewireStyles
+    <livewire:modals.audit/>
 </x-app-layout>
