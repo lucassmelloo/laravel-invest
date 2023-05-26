@@ -30,7 +30,6 @@
                         </thead>
                         <tbody>
                             @foreach($audit->getModified() as $key => $content)
-                            {{-- @dd($content) --}}
                             <tr class="bg-white border-b hover:bg-gray-100">
                                 <td class="px-6 py-4"><strong>{{$key}}</strong></td>
                                 <td class="px-6 py-4">{{$content['new']}}</td>
@@ -54,7 +53,6 @@
                         </thead>
                         <tbody>
                             @foreach($audit->getModified() as $key => $content)
-                            {{-- @dd($content) --}}
                             <tr class="bg-white border-b hover:bg-gray-100">
                                 <td class="px-6 py-4"><strong>{{$key}}</strong></td>
                                 <td class="px-6 py-4">{{$content['new']}}</td>
