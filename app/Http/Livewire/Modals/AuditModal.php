@@ -10,18 +10,15 @@ use OwenIt\Auditing\Contracts\Auditable;
 class AuditModal extends Component
 {
     public $showAuditModal = false;
-    public ?string $title = 'CDI';
-    public Indexer $indexer;
 
-    public function openAuditModal(Indexer $indexer)
+    public function openAuditModal()
     {
         $this->showAuditModal = true;
-        $this->indexer = Indexer::find('1');
+        dd('lucas');
     }
 
     public function render()
     {
-        $this->indexer = Indexer::find('1');
         return view('livewire.modals.audit');
     }
 }
