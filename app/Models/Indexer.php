@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use OwenIt\Auditing\Contracts\Auditable;
 use OwenIt\Auditing\Auditable as AuditingAuditable;
 
@@ -23,7 +24,7 @@ class Indexer extends Model implements Auditable
         'description'
     ];
 
-    public function fixed_incomes()
+    public function fixed_incomes() : BelongsToMany
     {
         return $this->belongsToMany(
             FixedIncome::class,

@@ -3,9 +3,9 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\FixedIncome;
-use App\Models\Indexer;
 use App\Repositories\FixedIncomeRepositoryInterface;
 use Exception;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 class FixedIncomeRepository extends BaseRepository implements FixedIncomeRepositoryInterface
@@ -15,18 +15,18 @@ class FixedIncomeRepository extends BaseRepository implements FixedIncomeReposit
         parent::__construct(new FixedIncome());
 
     }
-    public function all()
+    public function all() : Collection
     {
         return $this->model->with('indexers')->get();
     }
 
-    public function createFixedIncomeWithIndexers($data)
+    public function createFixedIncomeWithIndexers($data) : Void
     {
         DB::beginTransaction();
 
         $indexers = collect(data_get($data, 'indexers.*'))
                         ->reject(function ($value) {
-                            return $value['id'] == null;
+                            return $value['id'] === null;
                         });
         try
         {
@@ -42,10 +42,6 @@ class FixedIncomeRepository extends BaseRepository implements FixedIncomeReposit
         {
             DB::rollBack();
         }
-
-    }
-
-    public function indexers() {
 
     }
 
