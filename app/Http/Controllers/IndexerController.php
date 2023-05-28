@@ -13,8 +13,8 @@ class IndexerController extends Controller
      */
     public function index()
     {
-        //dd(ProductType::all());
-        return view('indexers.index')->with('indexers',Indexer::all());
+        return view('indexers.index')->with('indexers', Indexer::with('audits')->get());
+        //return view('indexers.index')->with('indexers', Indexer::all());
     }
 
     /**
@@ -23,14 +23,14 @@ class IndexerController extends Controller
     public function create()
     {
 
-        
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request) : RedirectResponse
-    {   
+    {
         Indexer::create($request->validate([
             'abreviation'=>['required','max:255'],
             'description' => ['required','max:255']
@@ -58,7 +58,7 @@ class IndexerController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Indexer $indexer) : RedirectResponse
-    {   
+    {
         $indexer->update($request->only(['description','abreviation']));
         return back();
     }

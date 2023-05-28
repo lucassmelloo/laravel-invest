@@ -8,12 +8,17 @@
         </h2>
 
         <p class="my-1 text-sm text-gray-600">
-            {{ __('Once the product type has been deleted, it will not be possible to recover it. Please type, the product type abbreviation to confirm you would like to permanently delete it.') }}
+            {{
+                __('Once the product type has been deleted, it will not be possible to recover it.
+                Please type, the product type abbreviation to confirm you would like to permanently delete it.')
+            }}
         </p>
         <div>
             @foreach ($indexer->audits->reverse() as $audit)
-                @if($audit->event != 'created')
-                    <h1 class="mt-5"><strong>{{ucfirst($audit->event)}}</strong> {{' at: ' . date_format($audit->created_at,'Y/m/d h:m:s')}}</h1>
+                @if($audit->event !== 'created')
+                    <h1 class="mt-5"><strong>{{ucfirst($audit->event)}}</strong>
+                        {{' at: ' . date_format($audit->created_at,'Y/m/d h:m:s')}}
+                    </h1>
                     <table class="w-full text-sm text-left text-gray-500 table-fixed">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
                             <tr>
@@ -39,7 +44,10 @@
                         </tbody>
                     </table>
                 @else
-                    <h1 class="my-3"><strong>{{ucfirst($audit->event)}}</strong> {{' at: ' . date_format($audit->created_at,'Y/m/d h:m:s')}}</h1>
+                    <h1 class="my-3">
+                        <strong>{{ucfirst($audit->event)}}</strong>
+                        {{' at: ' . date_format($audit->created_at,'Y/m/d h:m:s')}}
+                    </h1>
                     <table class="w-full text-sm text-left text-gray-500 table-fixed">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
                             <tr>
@@ -61,15 +69,15 @@
                         </tbody>
                     </table>
                 @endif
-                
+
             @endforeach
         </div>
-        
+
         <div class="mt-6 flex justify-end">
             <x-primary-button x-on:click="$dispatch('close')">
                 {{ __('Back') }}
             </x-primary-button>
         </div>
     </div>
-</x-modal>    
+</x-modal>
 @endforeach

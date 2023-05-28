@@ -28,9 +28,10 @@ class Indexer extends Model implements Auditable
         return $this->belongsToMany(
             FixedIncome::class,
             'fixed_income_has_indexer',
-            'fixed_income_id',
-            'indexer_id'
+            'indexer_id',
+            'fixed_income_id'
         );
     }
+
 
 }

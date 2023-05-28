@@ -17,18 +17,18 @@ class FixedIncomesController extends Controller
     public function __construct(protected FixedIncomeRepositoryInterface $repository){
 
     }
-    
+
     public function index(): View
     {
         $indexers = Indexer::all();
         $product_types = ProductType::all();
         $fixed_incomes = $this->repository->all();
-        
+
         return view(
             'fixed_incomes.index',
             [
                 'indexers'=>$indexers,
-                'product_types'=>$product_types, 
+                'product_types'=>$product_types,
                 'fixed_incomes' =>$fixed_incomes
             ]);
     }
@@ -38,7 +38,7 @@ class FixedIncomesController extends Controller
      */
     public function create(Request $request)
     {
-        
+
     }
 
     /**
@@ -46,7 +46,7 @@ class FixedIncomesController extends Controller
      */
     public function store(CreateFixedIncomeRequest $request) : RedirectResponse
     {
-        
+
         $this->repository->createFixedIncomeWithIndexers($request->all());
         return back();
     }
@@ -78,8 +78,10 @@ class FixedIncomesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(FixedIncome $fixedIncome) : RedirectResponse
     {
-        //
+        $this->repository->delete($fixedIncome->id);
+
+        return back();
     }
 }

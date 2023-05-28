@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignIdFor(Indexer::class)->constrained();
-            $table->foreignIdFor(FixedIncome::class)->constrained();
+            $table->foreignIdFor(FixedIncome::class)->constrained()->onDelete('cascade');
             $table->float('value');
         });
     }

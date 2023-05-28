@@ -1,17 +1,17 @@
-
+<h1>Lucas</h1>
 <x-modal name="audit-modal" title="Audit: {{$this->title}}" :scrollable="true" >
     <div class="p-6">
-        @csrf
+        @csrf 
         @method('delete')
         <h2 class="text-lg font-medium text-gray-900">
-            <strong>{{ __('Audit: ') }}</strong>{{__($this->title)}}
+            <strong>{{ __('Audit: ') }}</strong>{{__()}}
         </h2>
 
         <p class="my-1 text-sm text-gray-600">
             {{ __('Once the product type has been deleted, it will not be possible to recover it. Please type, the product type abbreviation to confirm you would like to permanently delete it.') }}
         </p>
         <div>
-            @foreach ($this->indexer->audits->reverse() as $audit)
+            {{-- @foreach ($this->indexer->audits->reverse() as $audit)
                 @if($audit->event != 'created')
                     <h1 class="mt-5"><strong>{{ucfirst($audit->event)}}</strong> {{' at: ' . date_format($audit->created_at,'Y/m/d h:m:s')}}</h1>
                     <table class="w-full text-sm text-left text-gray-500 table-fixed">
@@ -30,7 +30,6 @@
                         </thead>
                         <tbody>
                             @foreach($audit->getModified() as $key => $content)
-                            {{-- @dd($content) --}}
                             <tr class="bg-white border-b hover:bg-gray-100">
                                 <td class="px-6 py-4"><strong>{{$key}}</strong></td>
                                 <td class="px-6 py-4">{{$content['new']}}</td>
@@ -63,7 +62,7 @@
                     </table>
                 @endif
                 
-            @endforeach
+            @endforeach --}}
         </div>
         
         <div class="mt-6 flex justify-end">
