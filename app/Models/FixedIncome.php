@@ -35,7 +35,7 @@ class FixedIncome extends Model implements Auditable
             'fixed_income_has_indexer',
             'fixed_income_id',
             'indexer_id'
-        );
+        )->withPivot('value');
     }
 
 }
