@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Rap2hpoutre\LaravelLogViewer\LogViewerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +36,10 @@ Route::middleware(['auth', 'verified'])->group( function(){
         {
             Route::get('/', [ProfileController::class, 'edit'])->name('edit');
             Route::patch('/', [ProfileController::class, 'update'])->name('update');
-            Route::delete('/', [ProfileController::class, 'destroy'])->name('destroy');  
+            Route::delete('/', [ProfileController::class, 'destroy'])->name('destroy');
         }
     });
+    Route::get('logs', [LogViewerController::class, 'index']);
 
 });
 

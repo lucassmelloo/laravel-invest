@@ -10,7 +10,7 @@ class BaseRepository implements RepositoryInterface
 
     public function __construct(protected Model $model)
     {
-        
+
     }
 
     public function find($id)
@@ -40,8 +40,13 @@ class BaseRepository implements RepositoryInterface
     {
         $record = $this->model->find($id);
         $record->delete();
-        
+
         return $record;
+    }
+
+    public  function  with(String $string)
+    {
+        return $this->model->with($string);
     }
 
 }

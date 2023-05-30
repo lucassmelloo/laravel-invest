@@ -22,7 +22,7 @@ class FixedIncomesController extends Controller
     {
         $indexers = Indexer::all();
         $product_types = ProductType::all();
-        $fixed_incomes = $this->repository->all();
+        $fixed_incomes = $this->repository->with('indexers')->get();
 
         return view(
             'fixed_incomes.index',

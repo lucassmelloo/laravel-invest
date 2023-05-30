@@ -201,6 +201,10 @@ return [
          */
         OwenIt\Auditing\AuditingServiceProvider::class,
 
+        /*
+         * LogViewer Service Providers...
+         */
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
     ],
 
     /*
