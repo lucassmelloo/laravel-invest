@@ -1,40 +1,40 @@
-@foreach ( $indexers as $indexer )
-<x-modal name="edit-indexer-{{$indexer->id}}" :show="$errors->userDeletion->isNotEmpty()" focusable>
-    <form method="post" action="{{ route('indexers.update', $indexer->id) }}" class="space-y-6 px-6 pb-6">
+@foreach ( $fixed_incomes as $fixed_income )
+<x-modal name="edit-fixed-income-{{$fixed_income->id}}" :show="$errors->userDeletion->isNotEmpty()" focusable>
+    <form method="post" action="{{ route('fixed_incomes.update', $fixed_income->id) }}" class="space-y-6 px-6 pb-6">
         @csrf
         @method('patch')
         <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Are you sure you want to this prouct type?') }}
+            {{ __('Are you sure you want to edit this investment?') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Once the product type has been deleted, it will not be possible to recover it. Please type, the product type abbreviation to confirm you would like to permanently delete it.') }}
+            {{ __('Once the investment has been updated, it will be possible to track the changes at audit screen.') }}
         </p>
 
         <div class="mt-6">
 
             <div>
                 <x-input-label for="abreviation" :value="__('Abreviation')" />
-                <x-text-input 
-                id="abreviation" 
-                name="abreviation" 
-                type="text" 
-                class="mt-1 block w-full" 
-                autocomplete="name" 
-                value="{{$indexer->abreviation}}" 
+                <x-text-input
+                id="abreviation"
+                name="abreviation"
+                type="text"
+                class="mt-1 block w-full"
+                autocomplete="name"
+                value="{{$indexer->abreviation}}"
                 required autofocus />
             </div>
         </div>
-            
+
             <div>
                 <x-input-label for="description" :value="__('Description')" />
-                <x-text-input 
-                id="description" 
-                name="description" 
-                type="text" 
-                class="mt-1 block w-full" 
-                autocomplete="description" 
-                value="{{$indexer->description}}" 
+                <x-text-input
+                id="description"
+                name="description"
+                type="text"
+                class="mt-1 block w-full"
+                autocomplete="description"
+                value="{{$indexer->description}}"
                 required autofocus />
             </div>
 
@@ -50,5 +50,5 @@
             </div>
         </div>
     </form>
-</x-modal>    
+</x-modal>
 @endforeach
