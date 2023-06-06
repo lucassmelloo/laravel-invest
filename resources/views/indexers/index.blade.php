@@ -13,7 +13,9 @@
             @include('indexers.partials.components.create')
 
             @include('indexers.partials.components.list')
-            
+
+            <livewire:modals.audit-modal/>
+
         </div>
     </div>
 </x-app-layout>

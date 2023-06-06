@@ -10,8 +10,8 @@ use OwenIt\Auditing\Contracts\Auditable;
 
 class AuditModal extends Component
 {
-    public bool $showAuditModal = false;
-    public string $title = 'Titulo';
+
+    public int $count = 0;
 
     public function openAuditModal() :void
     {
@@ -22,4 +22,14 @@ class AuditModal extends Component
     {
         return view('livewire.modals.audit');
     }
+
+    public function increment(): void
+    {
+        $this->count++;
+    }
+    public function decrement() : void
+    {
+        $this->count--;
+    }
+
 }
