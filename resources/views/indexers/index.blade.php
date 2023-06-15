@@ -8,13 +8,12 @@
     <div class="py-12">
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            @include('components.error-card')
 
-            @include('indexers.partials.components.create')
+            <livewire:indexers.registration/>
 
-            @include('indexers.partials.components.list')
+            <livewire:indexers.listing/>
 
-            <livewire:modals.audit-modal/>
+
 
         </div>
     </div>

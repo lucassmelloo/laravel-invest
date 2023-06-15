@@ -3,6 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Repositories\RepositoryInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class BaseRepository implements RepositoryInterface
@@ -44,9 +45,14 @@ class BaseRepository implements RepositoryInterface
         return $record;
     }
 
-    public  function  with(String $string)
+    public  function  with(String $string) : Builder
     {
         return $this->model->with($string);
+    }
+
+    public  function  paginate(Int $pagination)
+    {
+        return $this->model->paginate($pagination);
     }
 
 }
