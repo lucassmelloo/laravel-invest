@@ -14,27 +14,27 @@
         <div class="mt-6">
 
             <div>
-                <x-input-label for="abreviation" :value="__('Abreviation')" />
-                <x-text-input 
-                id="abreviation" 
-                name="abreviation" 
-                type="text" 
-                class="mt-1 block w-full" 
-                autocomplete="name" 
-                value="{{$indexer->abreviation}}" 
+                <x-input-label for="abbreviation" :value="__('Abbreviation')" />
+                <x-text-input
+                id="abbreviation"
+                name="abbreviation"
+                type="text"
+                class="mt-1 block w-full"
+                autocomplete="name"
+                value="{{$indexer->abreviation}}"
                 required autofocus />
             </div>
         </div>
-            
+
             <div>
                 <x-input-label for="description" :value="__('Description')" />
-                <x-text-input 
-                id="description" 
-                name="description" 
-                type="text" 
-                class="mt-1 block w-full" 
-                autocomplete="description" 
-                value="{{$indexer->description}}" 
+                <x-text-input
+                id="description"
+                name="description"
+                type="text"
+                class="mt-1 block w-full"
+                autocomplete="description"
+                value="{{$indexer->description}}"
                 required autofocus />
             </div>
 
@@ -50,5 +50,5 @@
             </div>
         </div>
     </form>
-</x-modal>    
+</x-modal>
 @endforeach

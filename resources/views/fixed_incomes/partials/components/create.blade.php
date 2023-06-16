@@ -38,8 +38,8 @@
                         <x-input-label for="productType" :value="__('Product Type')" />
                         <select id="productType" name="product_type_id" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                             <option selected>Choose Product Type</option>
-                            @foreach ( $product_types as $product_type)  
-                            <option value="{{$product_type->id}}">{{$product_type->abreviation}}</option>
+                            @foreach ( $product_types as $product_type)
+                            <option value="{{$product_type->id}}">{{$product_type->abbreviation}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -49,8 +49,8 @@
                         <x-input-label for="indexers[firstIndexer][id]" :value="__('First Indexer')" />
                         <select id="indexers[firstIndexer][id]" name="indexers[firstIndexer][id]" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                             <option selected>Choose Indexer</option>
-                            @foreach ( $indexers as $indexer)  
-                            <option value="{{$indexer->id}}">{{$indexer->abreviation}}</option>
+                            @foreach ( $indexers as $indexer)
+                            <option value="{{$indexer->id}}">{{$indexer->abbreviation}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -64,8 +64,8 @@
                         <x-input-label for="indexers[secondIndexer][id]" :value="__('Second Indexer')" />
                         <select id="indexers[secondIndexer][id]" name="indexers[secondIndexer][id]" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                             <option selected value="" >Choose Indexer</option>
-                            @foreach ( $indexers as $indexer)  
-                            <option value="{{$indexer->id}}">{{$indexer->abreviation}}</option>
+                            @foreach ( $indexers as $indexer)
+                            <option value="{{$indexer->id}}">{{$indexer->abbreviation}}</option>
                             @endforeach
                         </select>
                     </div>

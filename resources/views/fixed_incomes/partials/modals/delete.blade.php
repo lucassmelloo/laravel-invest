@@ -12,17 +12,17 @@
         </p>
 
         <div class="mt-6">
-            <x-input-label for="abreviation" value="{{ __('Abreviation') }}" class="sr-only" />
+            <x-input-label for="abreviation" value="{{ __('Abbreviation') }}" class="sr-only" />
 
             <x-text-input
-                id="abreviation"
-                name="abreviation"
+                id="abbreviation"
+                name="abbreviation"
                 type="text"
                 class="mt-1 block w-3/4"
                 placeholder="{{ $fixed_income->title}}"
             />
 
-            <x-input-error :messages="$errors->userDeletion->get('abreviation')" class="mt-2" />
+            <x-input-error :messages="$errors->userDeletion->get('abbreviation')" class="mt-2" />
         </div>
 
         <div class="mt-6 flex justify-end">
@@ -35,5 +35,5 @@
             </x-danger-button>
         </div>
     </form>
-</x-modal>    
+</x-modal>
 @endforeach

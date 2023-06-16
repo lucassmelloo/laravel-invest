@@ -14,8 +14,8 @@
                 @csrf
                 @method('POST')
                 <div>
-                    <x-input-label for="abreviation" :value="__('Abreviation')" />
-                    <x-text-input id="abreviation" name="abreviation" type="text" class="mt-1 block w-full" required autofocus autocomplete="name" />
+                    <x-input-label for="abbreviation" :value="__('Abbreviation')" />
+                    <x-text-input id="abbreviation" name="abbreviation" type="text" class="mt-1 block w-full" required autofocus autocomplete="name" />
                 </div>
 
                 <div>

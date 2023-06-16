@@ -22,7 +22,7 @@ class DeleteProductTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'abreviation'=>'required',
+            'abbreviation'=>'required',
             'id'=>'required,exists:product_types:id',
         ];
     }
@@ -30,7 +30,7 @@ class DeleteProductTypeRequest extends FormRequest
     public function messages()
     {
         return [
-            'abreviation.required'=>'To exclude a product type, you must enter its abbreviation.',
+            'abbreviation.required'=>'To exclude a product type, you must enter its abbreviation.',
             'id.required'=>'ID is required.'
         ];
     }

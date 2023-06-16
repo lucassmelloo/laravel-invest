@@ -16,31 +16,31 @@ class ProductTypeSeeder extends Seeder
     {
         $productTypes = [
             [
-                'abreviation'=>'CDB',
+                'abbreviation'=>'CDB',
                 'description' =>'Certificado de depósito bancário'
             ],
             [
-                'abreviation'=>'LCI',
+                'abbreviation'=>'LCI',
                 'description' =>'Letra de Crédito Imobiliário'
             ],
             [
-                'abreviation'=>'LCA',
+                'abbreviation'=>'LCA',
                 'description' =>'Letra do Crédito do Agronegócio'
             ],
             [
-                'abreviation'=>'CRI',
+                'abbreviation'=>'CRI',
                 'description' =>'Certificados de Recebíveis Imobiliários'
             ],
             [
-                'abreviation'=>'CRA',
+                'abbreviation'=>'CRA',
                 'description' =>'Certificados de Recebíveis Agronegócio'
             ],
             [
-                'abreviation'=>'Debêntures',
+                'abbreviation'=>'Debêntures',
                 'description' =>'Títulos de Empresas Privadas'
             ],
             [
-                'abreviation'=>'Título Público',
+                'abbreviation'=>'Título Público',
                 'description' =>'Títulos de Empresas Governamentais'
             ],
         ];

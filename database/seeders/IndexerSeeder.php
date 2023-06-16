@@ -16,19 +16,19 @@ class IndexerSeeder extends Seeder
     {
         $indexers = [
                 [
-                    'abreviation'=>'CDI',
+                    'abbreviation'=>'CDI',
                     'description'=>'Certificado de Depósito Interbancário'
                 ],
                 [
-                    'abreviation'=>'IPCA',
+                    'abbreviation'=>'IPCA',
                     'description'=>'Índice Nacional de Preços ao Consumidor Amplo'
                 ],
                 [
-                    'abreviation'=>'Préfixado',
+                    'abbreviation'=>'Préfixado',
                     'description'=>'Produto com juros fixados'
                 ]
             ];
-            
+
         foreach ($indexers as $indexer)
             Indexer::create($indexer);
     }

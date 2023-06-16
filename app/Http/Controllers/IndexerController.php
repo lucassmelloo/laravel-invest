@@ -32,7 +32,7 @@ class IndexerController extends Controller
     public function store(Request $request) : RedirectResponse
     {
         Indexer::create($request->validate([
-            'abreviation'=>['required','max:255'],
+            'abbreviation'=>['required','max:255'],
             'description' => ['required','max:255']
         ]));
         return back()->with(['status'=>'productType-created']);
@@ -59,7 +59,7 @@ class IndexerController extends Controller
      */
     public function update(Request $request, Indexer $indexer) : RedirectResponse
     {
-        $indexer->update($request->only(['description','abreviation']));
+        $indexer->update($request->only(['description','abbreviation']));
         return back();
     }
 

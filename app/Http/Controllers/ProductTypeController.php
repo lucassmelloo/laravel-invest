@@ -21,7 +21,7 @@ class ProductTypeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request) 
+    public function create(Request $request)
     {
 
 
@@ -33,7 +33,7 @@ class ProductTypeController extends Controller
     public function store(Request $request): RedirectResponse
     {
         ProductType::create($request->validate([
-            'abreviation'=>['required','max:255'],
+            'abbreviation'=>['required','max:255'],
             'description' => ['required','max:255']
         ]));
 
@@ -61,7 +61,7 @@ class ProductTypeController extends Controller
      */
     public function update(Request $request, ProductType $productType) : RedirectResponse
     {
-        $productType->update($request->only(['description','abreviation']));
+        $productType->update($request->only(['description','abbreviation']));
         return back()->with(['status'=>'productType-updated']);
     }
 

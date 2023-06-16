@@ -26,7 +26,7 @@
                 @foreach($fixed_income->indexers as $indexer)
                     <div class="mt-2">
                         <div class="py-2 px-4 shadow-md no-underline rounded-full bg-amber-600 text-white font-sans text-sm border-red btn-primary hover:text-white hover:bg-red-light focus:outline-none active:shadow-none">
-                            {{$indexer->abreviation . ':'}}
+                            {{$indexer->abbreviation . ':'}}
                             <strong>{{$indexer->pivot->value . '%'}}</strong>
                         </div>
                     </div>

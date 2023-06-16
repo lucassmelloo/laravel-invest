@@ -20,7 +20,7 @@ class ProductType extends Model implements Auditable
      * @var array<int, string>
      */
     protected $fillable = [
-        'abreviation',
+        'abbreviation',
         'description'
     ];
 

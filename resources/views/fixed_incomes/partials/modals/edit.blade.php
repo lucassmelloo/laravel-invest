@@ -14,14 +14,14 @@
         <div class="mt-6">
 
             <div>
-                <x-input-label for="abreviation" :value="__('Abreviation')" />
+                <x-input-label for="abbreviation" :value="__('Abbreviation')" />
                 <x-text-input
-                id="abreviation"
-                name="abreviation"
+                id="abbreviation"
+                name="abbreviation"
                 type="text"
                 class="mt-1 block w-full"
                 autocomplete="name"
-                value="{{$indexer->abreviation}}"
+                value="{{$indexer->abbreviation}}"
                 required autofocus />
             </div>
         </div>

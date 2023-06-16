@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('indexers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('abreviation');
+            $table->string('abbreviation');
             $table->string('description');
         });
     }
