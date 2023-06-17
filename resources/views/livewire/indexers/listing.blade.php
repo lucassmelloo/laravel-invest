@@ -34,7 +34,7 @@
                 </thead>
                 <tbody>
                 @foreach ($indexers as $key => $index)
-                    <tr class="bg-white border-b hover:bg-gray-100">
+                    <tr class="bg-white border-b hover:bg-gray-200">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             {{$index->id}}
                         </th>
