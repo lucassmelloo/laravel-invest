@@ -11,10 +11,10 @@
 
             @include('components.error-card')
 
-            @include('product_type.partials.components.create')
+            <livewire:product-types.components.registration/>
 
-            @include('product_type.partials.components.list')
-            
+            <livewire:product-types.components.listing/>
+
         </div>
     </div>
 </x-app-layout>

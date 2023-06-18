@@ -18,8 +18,11 @@ class Listing extends Component
     {
         return view('livewire.indexers.listing', [
             'indexers' => Indexer::query()
-                ->when($this->search, fn(Builder $query) => $query->where('description', 'like', '%'.$this->search.'%')
-                    ->orWhere('abbreviation', 'like', '%'.$this->search.'%'))
+                ->when(
+                    $this->search, fn(Builder $builder) =>
+                        $builder
+                            ->where('description', 'like', '%'.$this->search.'%')
+                            ->orWhere('abbreviation', 'like', '%'.$this->search.'%'))
                 ->paginate(5)
         ]);
     }

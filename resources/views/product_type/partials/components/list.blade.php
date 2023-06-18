@@ -10,8 +10,6 @@
             {{ __('These are the records of registered product types.') }}
         </p>
     </header>
-        @csrf
-        @method('PATCH')
         <div class="flex overflow-x-auto">
             <table class="w-full text-sm text-left text-gray-500 ">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
