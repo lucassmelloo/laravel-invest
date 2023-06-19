@@ -21,7 +21,7 @@
                 type="text"
                 class="mt-1 block w-full"
                 autocomplete="name"
-                value="{{$indexer->abreviation}}"
+                value="{{$indexer->abbreviation}}"
                 required autofocus />
             </div>
         </div>

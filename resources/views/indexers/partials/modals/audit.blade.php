@@ -16,9 +16,10 @@
         <div>
             @foreach ($indexer->audits->reverse() as $audit)
                 @if($audit->event !== 'created')
-                    <h1 class="mt-5"><strong>{{ucfirst($audit->event)}}</strong>
-                        {{' at: ' . date_format($audit->created_at,'Y/m/d h:m:s')}}
+                    <h1 class="mt-5"><strong>{{ucfirst($audit->event) . ' by: ' }}</strong>
+                        {{$audit->user->name .  ' (' .date_format($audit->created_at,'Y/m/d h:m:s') . ')'}}
                     </h1>
+
                     <table class="w-full text-sm text-left text-gray-500 table-fixed">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
                             <tr>
@@ -35,7 +36,7 @@
                         </thead>
                         <tbody>
                             @foreach($audit->getModified() as $key => $content)
-                            <tr class="bg-white border-b hover:bg-gray-100">
+                            <tr class="bg-white border-b hover:bg-gray-200">
                                 <td class="px-6 py-4"><strong>{{$key}}</strong></td>
                                 <td class="px-6 py-4">{{$content['new']}}</td>
                                 <td class="px-6 py-4">{{data_get($content,'old')}}</td>
