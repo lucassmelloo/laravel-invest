@@ -12,6 +12,7 @@ class AuditModal extends Component
 {
 
     public int $count = 0;
+    public bool $showAuditModal = false;
 
     public function openAuditModal() :void
     {
@@ -23,13 +24,5 @@ class AuditModal extends Component
         return view('livewire.modals.audit');
     }
 
-    public function increment(): void
-    {
-        $this->count++;
-    }
-    public function decrement() : void
-    {
-        $this->count--;
-    }
 
 }

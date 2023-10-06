@@ -8,16 +8,18 @@ use Livewire\Component;
 
 class Edit extends Component
 {
-    public bool $model = false;
-    public Indexer $indexer;
-
-    protected $rules = [
-
-    ];
+    public bool $modal = false;
+    public ?Indexer $indexer = null;
 
     public function render() : View
     {
-        $this->indexer = Indexer::find(1);
         return view('livewire.indexers.modals.edit', ['indexer' => $this->indexer] );
+    }
+
+    public function openModal() : void
+    {
+        $this->indexer = Indexer::find(1);
+        $this->modal = true;
+
     }
 }
