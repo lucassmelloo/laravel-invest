@@ -1,5 +1,5 @@
 @foreach ( $product_types as $product_type )
-<x-modal name="edit-productType-{{$product_type->id}}" :show="$errors->userDeletion->isNotEmpty()" focusable>
+<x-modal name="edit-productType-{{$product_type->id}}" focusable>
     <form method="post" action="{{ route('product_type.update', $product_type->id) }}" class="space-y-6 px-6 pb-6">
         @csrf
         @method('patch')

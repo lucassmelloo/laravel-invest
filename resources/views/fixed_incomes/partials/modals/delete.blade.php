@@ -1,5 +1,5 @@
 @foreach ( $fixed_incomes as $fixed_income )
-<x-modal name="confirm-fixed-income-deletion-{{$fixed_income->id}}" :show="$errors->userDeletion->isNotEmpty()" focusable>
+<x-modal name="confirm-fixed-income-deletion-{{$fixed_income->id}}" focusable>
     <form method="post" action="{{ route('fixed_incomes.destroy', $fixed_income->id) }}" class="p-6">
         @csrf
         @method('delete')

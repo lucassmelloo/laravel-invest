@@ -1,5 +1,5 @@
 @foreach ( $fixed_incomes as $fixed_income )
-<x-modal name="edit-fixed-income-{{$fixed_income->id}}" :show="$errors->userDeletion->isNotEmpty()" focusable>
+<x-modal name="edit-fixed-income-{{$fixed_income->id}}" focusable>
     <form method="post" action="{{ route('fixed_incomes.update', $fixed_income->id) }}" class="space-y-6 px-6 pb-6">
         @csrf
         @method('patch')

@@ -1,5 +1,5 @@
 @foreach ( $product_types as $product_type )
-<x-modal name="confirm-productType-deletion-{{$product_type->id}}" :show="$errors->userDeletion->isNotEmpty()" focusable>
+<x-modal name="confirm-productType-deletion-{{$product_type->id}}" focusable>
     <form method="post" action="{{ route('product_type.destroy', $product_type->id) }}" class="p-6">
         @csrf
         @method('delete')

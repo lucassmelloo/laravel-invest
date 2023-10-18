@@ -1,5 +1,5 @@
 @foreach ( $indexers as $indexer )
-<x-modal name="edit-indexer-{{$indexer->id}}" :show="$errors->userDeletion->isNotEmpty()" focusable>
+<x-modal name="edit-indexer-{{$indexer->id}}" focusable>
     <form method="post" action="{{ route('indexers.update', $indexer->id) }}" class="space-y-6 px-6 pb-6">
         @csrf
         @method('patch')

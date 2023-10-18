@@ -8,7 +8,7 @@
         </svg>
     </button>
 
-    <x-modal wire:model="modal" name="indexer-edit" focusable>
+    <x-modal wire:model="modal" name="indexer-edit"  :show="$modal" focusable>
         <div class="space-y-6 px-6 pb-6">
 
             <h2 class="text-lg font-medium text-gray-900">
@@ -18,7 +18,9 @@
             <p class="mt-1 text-sm text-gray-600">
                 {{ __('Once the product type has been deleted, it will not be possible to recover it. Please type, the product type abbreviation to confirm you would like to permanently delete it.') }}
             </p>
-
+            {{-- @if($indexer)
+                @dd($modal, $indexer)
+            @endif --}}
             <div class="mt-6">
 
                 <div>

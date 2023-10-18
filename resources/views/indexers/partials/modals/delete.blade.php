@@ -1,5 +1,5 @@
 @foreach ( $indexers as $indexer )
-<x-modal name="confirm-indexer-deletion-{{$indexer->id}}" :show="$errors->userDeletion->isNotEmpty()" focusable>
+<x-modal name="confirm-indexer-deletion-{{$indexer->id}}"  focusable>
     <form method="post" action="{{ route('indexers.destroy', $indexer->id) }}" class="p-6">
         @csrf
         @method('delete')
